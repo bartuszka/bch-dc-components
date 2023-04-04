@@ -1,0 +1,95 @@
+@import '../styles/styles';
+
+:host {
+  display: block;
+  height: 70px;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 1004;
+  display: flex;
+  background-image: linear-gradient(to right, $color-primary-dark, $color-primary-light);
+  box-shadow: $big-elements-shadow;
+
+  h1 {
+    color: $color-white;
+    min-width: 270px;
+    line-height: $header-height;
+    text-align: center;
+    transition: text-indent ease-out .2s;
+    white-space: nowrap;
+
+    @include breakpoint-mobile {
+      text-align: left;
+      text-indent: 70px;
+      width: 100%;
+      min-width: 100%;
+      background-image: linear-gradient(to right, $color-primary-dark, $color-primary-light);
+      z-index: 1002;
+    }
+  }
+
+  ul {
+    li {
+      display: inline-block;
+      line-height: $header-height;
+
+      @include breakpoint-mobile {
+        display: block;
+      }
+
+      dc-link-button {
+        width: 200px;
+
+        @include breakpoint-mobile {
+          width: 100%;
+        }
+      }
+    }
+
+    @include breakpoint-mobile {
+      box-shadow: $big-elements-shadow;
+    }
+  }
+
+  nav {
+    transition: transform ease-out .2s;
+
+    @include breakpoint-mobile {
+      width: 100%;
+      position: absolute;
+      top: -200px;
+      z-index: 1001;
+      transform: translateY(-100%);
+
+      &.opened {
+        top: 0;
+        transform: translateY($header-height);
+      }
+    }
+  }
+
+  #menu-button {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 70px;
+    position: absolute;
+    margin-left: -70px;
+    align-items: center;
+    z-index: 1003;
+    transition: margin-left ease-out .2s;
+    cursor: pointer;
+
+    i {
+      height: 45px;
+      width: 45px;
+    }
+
+    @include breakpoint-mobile {
+      margin-left: 0;
+    }
+  }
+}

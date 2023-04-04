@@ -1,0 +1,51 @@
+$icons: 'menu', 'play_arrow';
+
+@mixin icons() {
+  @each $icon in $icons {
+    i.#{$icon} {
+      position: relative;
+      display: block;
+      min-width: 20px;
+      min-height: 20px;
+      width: inherit;
+      height: inherit;
+
+      &::after {
+        display: inline-block;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../../assets/icons/#{$icon}.svg');
+        background-repeat: no-repeat;
+        background-size: 100%;
+      }
+    }
+  }
+}
+
+@mixin icon-color-filter($class-name, $invert, $sepia, $saturate, $hue, $brightness, $contrast) {
+  &.#{$class-name}::after {
+    filter: invert($invert) sepia($sepia) saturate($saturate) hue-rotate($hue) brightness($brightness) contrast($contrast);
+  }
+}
+
+@mixin icon-colors {
+  i {
+    @include icon-color-filter('color-white', 100%, 0%, 0%, 0deg, 100%, 100%);
+    @include icon-color-filter('color-primary-dark', 11%, 53%, 1858%, 208deg, 90%, 94%);
+    @include icon-color-filter('color-primary-medium', 25%, 16%, 4079%, 203deg, 90%, 94%);
+    @include icon-color-filter('color-primary-light', 57%, 56%, 222%, 195deg, 90%, 88%);
+    @include icon-color-filter('color-secondary-dark', 17%, 16%, 1388%, 255deg, 96%, 83%);
+    @include icon-color-filter('color-secondary-medium', 54%, 22%, 691%, 251deg, 96%, 93%);
+    @include icon-color-filter('color-secondary-light', 100%, 98%, 1295%, 193deg, 88%, 94%);
+    @include icon-color-filter('color-light-gray', 93%, 2%, 12%, 314deg, 85%, 90%);
+    @include icon-color-filter('color-medium-gray', 48%, 10%, 3%, 3deg, 94%, 87%);
+    @include icon-color-filter('color-dark-gray', 14%, 19%, 12%, 4deg, 92%, 82%);
+    @include icon-color-filter('color-warning-yellow', 71%, 87%, 2173%, 359deg, 101%, 106%);
+    @include icon-color-filter('color-success-green', 44%, 84%, 2643%, 85deg, 99%, 103%);
+    @include icon-color-filter('color-error-red', 10%, 100%, 5712%, 7deg, 85%, 116%);
+  }
+}

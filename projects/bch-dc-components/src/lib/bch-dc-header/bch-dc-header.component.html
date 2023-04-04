@@ -1,0 +1,18 @@
+<header>
+  <div id="menu-button">
+    <i class="menu color-white" (click)="menuOpened = !menuOpened"></i>
+  </div>
+
+  <h1 id="logo" [ngStyle]="{ width: sideMenuWidth + 'px' }">{{ title }}</h1>
+
+  <nav [ngClass]="{ 'opened': menuOpened }">
+    <ul>
+      <li *ngFor="let button of buttons">
+        <bch-dc-link-button [routerLink]="button.url"
+                            routerLinkActive="active"
+                            (click)="selectPage(button)">{{ button.message }}
+        </bch-dc-link-button>
+      </li>
+    </ul>
+  </nav>
+</header>

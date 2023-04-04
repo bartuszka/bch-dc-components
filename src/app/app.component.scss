@@ -1,0 +1,23 @@
+@import './shared/styles/variables';
+
+//#container {
+//  display: flex;
+//
+//  #content-container {
+//    box-sizing: border-box;
+//    height: calc(100vh - $header-height);
+//    overflow: auto;
+//    padding: 20px;
+//    width: 100%;
+//    z-index: 1;
+//  }
+//
+//  z-index: 1;
+//}
+
+#content-container {
+  box-sizing: border-box;
+  height: calc(100vh - $header-height);
+  overflow: auto;
+  padding: 20px;
+}

@@ -1,0 +1,35 @@
+// Colors
+$color-primary-light: #a4acda;
+$color-primary-medium: #5f6db9;
+$color-primary-dark: #1a2550;
+$color-secondary-light: #dea3de;
+$color-secondary-medium: #b46cb4;
+$color-secondary-dark: #492447;
+$color-light-gray: #c2c2c2;
+$color-medium-gray: #777;
+$color-dark-gray: #333;
+$color-error-red: #cb0000;
+$color-warning-yellow: #ffae00;
+$color-success-green: #09af00;
+$color-white: #fff;
+
+// Fonts
+$font-family: calibri, sans-serif;
+$font-size-header-first: 1.9rem;
+$font-size-header-second: 1.6rem;
+$font-size-header-third: 1.2rem;
+$font-size-normal: 1rem;
+$font-size-small: .8rem;
+$font-size-tiny: .6rem;
+
+// Spaces
+$space-l: 20px;
+$space-m: 10px;
+$space-s: 5px;
+
+// Shadows
+$big-elements-shadow: 0 0 10px $color-medium-gray;
+$small-elements-shadow: 0 0 5px 1px $color-dark-gray;
+
+// Header
+$header-height: 70px;

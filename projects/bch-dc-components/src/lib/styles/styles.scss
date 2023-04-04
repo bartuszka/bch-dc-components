@@ -1,0 +1,31 @@
+@import 'variables';
+@import 'icons';
+@import 'breakpoints';
+@import 'buttons';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-family;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: $font-size-header-first;
+}
+
+@mixin clean-button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+@include icons;
+@include icon-colors;

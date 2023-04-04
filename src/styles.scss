@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+@import './app/shared/styles/breakpoints';
+
+$color-code-background: #333;
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+code {
+  display: block;
+  position: relative;
+  margin-bottom: 15px;
+  background-color: $color-code-background;
+  color: white;
+  padding: 10px;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    z-index: 5000;
+  }
+}
+
+@include breakpoint-mobile {
+  pre {
+    font-size: .8rem;
+    white-space: pre-line;
+  }
+}
+
+* {
+  font-family: calibri, sans-serif;
+}

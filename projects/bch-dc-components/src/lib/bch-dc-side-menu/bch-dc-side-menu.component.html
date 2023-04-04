@@ -1,0 +1,8 @@
+<section appSideMenu
+         [modeOverlap]="modeOverlap"
+         [headerHeight]="headerHeight"
+         [isVisible]="isVisible"
+         [sideMenuWidth]="sideMenuWidth">
+  <bch-dc-circle-button [colorMode]="circleButtonColorMode.SECONDARY_DARK" (click)="toggleMenu()"></bch-dc-circle-button>
+  <ng-content></ng-content>
+</section>

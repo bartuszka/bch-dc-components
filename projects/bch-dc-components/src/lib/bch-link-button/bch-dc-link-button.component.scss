@@ -1,0 +1,31 @@
+@import '../styles/styles';
+
+:host {
+  width: inherit;
+
+  a, button {
+    width: inherit;
+    margin: 0;
+    padding: 0 20px;
+    display: block;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: $font-size-header-second;
+    color: $color-primary-dark;
+    height: 100%;
+    background-color: $color-secondary-medium;
+    transition: background-color ease-out .5s;
+
+    &:hover {
+      background-color: $color-secondary-dark;
+      color: $color-white;
+    }
+  }
+
+  &.active {
+    a {
+      background-color: $color-white;
+    }
+  }
+}

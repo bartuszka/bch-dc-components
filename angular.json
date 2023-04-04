@@ -1,5 +1,4 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -17,6 +16,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "preserveSymlinks": true,
             "outputPath": "dist/bch-dc-workspace",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -96,6 +96,39 @@
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        }
+      }
+    },
+    "bch-dc-components": {
+      "projectType": "library",
+      "root": "projects/bch-dc-components",
+      "sourceRoot": "projects/bch-dc-components/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/bch-dc-components/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/bch-dc-components/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/bch-dc-components/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/bch-dc-components/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
           }
         }
       }

@@ -1,0 +1,4 @@
+<button [ngClass]="[colorSet.backgroundColor, (size === circleButtonSizes.BIG ? 'big' : 'small')]"
+        [disabled]="isDisabled">
+  <i [ngClass]="[iconName, (isDisabled ? colorSetDisabled.textColor : colorSet.textColor)]"></i>
+</button>

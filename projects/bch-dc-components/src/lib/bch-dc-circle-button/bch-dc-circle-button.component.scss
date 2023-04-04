@@ -1,0 +1,29 @@
+@import '../../../projects/bch-dc-components/src/lib/styles/styles';
+
+:host {
+  display: block;
+
+  button {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    box-shadow: $small-elements-shadow;
+
+    i {
+      margin: 0 auto;
+      width: 30%;
+      height: 30%;
+    }
+
+    &.big {
+      width: 52px;
+      height: 52px;
+      border-radius: 26px;
+
+      i {
+        width: 60%;
+        height: 60%;
+      }
+    }
+  }
+}
