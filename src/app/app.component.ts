@@ -6,7 +6,7 @@ import { headerButtonsData } from './shared/data/header-buttons-data';
 import { NavigationLink } from './shared/models/navigation-link';
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { SideMenuDisplayModeModel } from 'bch-dc-components';
+import { SideMenuDisplayModeModel } from 'projects/bch-dc-components/src/lib/bch-dc-side-menu/models/side-menu-display-mode.model';
 
 @Component({
   selector: 'app-root',

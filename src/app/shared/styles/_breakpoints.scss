@@ -1,5 +1,0 @@
-@mixin breakpoint-mobile() {
-  @media (max-width: 768px) {
-    @content;
-  }
-}

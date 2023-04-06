@@ -1,41 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
-@import './app/shared/styles/breakpoints';
+@import 'bch-dc-styles';
 
-$color-code-background: #333;
+@mixin header-before($text-color: $color-medium-gray, $color-light: $color-primary-light, $color-dark: $color-primary-medium) {
+  &.documentation {
+    color: $text-color;
+    position: relative;
+    text-indent: 25px;
+    background-image: linear-gradient(to right, $color-white, $color-light);
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 2px;
+      height: 100%;
+      border-left: solid $color-light 4px;
+      border-right: solid $color-dark 9px;
+    }
+  }
+}
 
 html, body {
   margin: 0;
   padding: 0;
 }
 
-code {
-  display: block;
-  position: relative;
-  margin-bottom: 15px;
-  background-color: $color-code-background;
-  color: white;
-  padding: 10px;
-
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -20px;
-    right: 0;
-    width: 15px;
-    height: 15px;
-    background-color: red;
-    z-index: 5000;
-  }
-}
-
-@include breakpoint-mobile {
-  pre {
-    font-size: .8rem;
-    white-space: pre-line;
-  }
-}
-
 * {
   font-family: calibri, sans-serif;
+}
+
+h1 {
+  margin-bottom: 40px;
+
+  @include header-before($color-black, $color-secondary-light, $color-secondary-medium);
+}
+
+h2 {
+  margin-bottom: 30px;
+
+  @include header-before($color-black, $color-primary-light, $color-primary-medium);
+}
+
+pre {
+  margin: 0;
+  max-height: inherit;
+  overflow: hidden;
 }

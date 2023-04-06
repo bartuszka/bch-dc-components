@@ -1,4 +1,6 @@
+@import 'bch-dc-styles';
+
 bch-dc-link-button {
-  display: block;
   height: 40px;
+  border-bottom: solid $color-primary-dark 1px;
 }

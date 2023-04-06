@@ -1,20 +1,15 @@
-<h2>Circle button</h2>
+<h2 class="documentation">Circle button API</h2>
 
-<h3>API:</h3>
+<h3 class="documentation">TypeScript</h3>
 
-<h4>TypeScript</h4>
+<app-code-example>
+  import &#123; BchDcCircleButtonModule &#125; from 'bch-dc-components';
+</app-code-example>
 
-<div>
-  <code>
-    import &#123; CircleButtonComponent &#125; from 'bch-dc-components';
-  </code>
-</div>
+<h3 class="documentation">HTML</h3>
 
-<h4>HTML</h4>
-
-<div>
-  <code>
-    <pre>
+<app-code-example [expandButtonVisible]="true">
+  <pre>
       &#60;app-circle-button
           iconName="play_arrow"
           [colorMode]="colorModes.BASIC"&#62;
@@ -81,11 +76,11 @@
           [colorMode]="colorModes.SECONDARY_LIGHT"
           [size]="circleButtonSizes.BIG" [isDisabled]="true"&#62;
       &#60;/app-circle-button&#62;
-    </pre>
-  </code>
-</div>
+  </pre>
+</app-code-example>
 
-<h4>Examples</h4>
+
+<h3 class="documentation">Examples</h3>
 
 <bch-dc-circle-button iconName="play_arrow"
                       [colorMode]="colorModes.BASIC"></bch-dc-circle-button>
@@ -97,6 +92,10 @@
                       [colorMode]="colorModes.SECONDARY_DARK"></bch-dc-circle-button>
 <bch-dc-circle-button iconName="play_arrow"
                       [colorMode]="colorModes.SECONDARY_LIGHT"></bch-dc-circle-button>
+<bch-dc-circle-button iconName="play_arrow"
+                      [colorMode]="colorModes.WARN"></bch-dc-circle-button>
+<bch-dc-circle-button iconName="play_arrow"
+                      [colorMode]="colorModes.ERROR"></bch-dc-circle-button>
 <bch-dc-circle-button iconName="play_arrow"
                       [colorMode]="colorModes.SECONDARY_LIGHT"
                       [isDisabled]="true"></bch-dc-circle-button>
@@ -115,6 +114,12 @@
                       [size]="circleButtonSizes.BIG"></bch-dc-circle-button>
 <bch-dc-circle-button iconName="play_arrow"
                       [colorMode]="colorModes.SECONDARY_LIGHT"
+                      [size]="circleButtonSizes.BIG"></bch-dc-circle-button>
+<bch-dc-circle-button iconName="play_arrow"
+                      [colorMode]="colorModes.WARN"
+                      [size]="circleButtonSizes.BIG"></bch-dc-circle-button>
+<bch-dc-circle-button iconName="play_arrow"
+                      [colorMode]="colorModes.ERROR"
                       [size]="circleButtonSizes.BIG"></bch-dc-circle-button>
 <bch-dc-circle-button iconName="play_arrow"
                       [colorMode]="colorModes.SECONDARY_LIGHT"

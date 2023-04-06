@@ -1,6 +1,12 @@
 {
   "name": "bch-dc-components",
-  "version": "0.0.33",
+  "version": "0.0.51",
+  "exports": {
+    "./themeee": {
+      "sass": "./assets/_bch-dc-styles.scss",
+      "saas": "./assets/_bch-dc-orange-blue-theme.scss"
+    }
+  },
   "peerDependencies": {
     "@angular/common": "^15.2.0",
     "@angular/core": "^15.2.0"

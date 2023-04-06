@@ -13,8 +13,6 @@ $color-warning-yellow: var(--color-warning-yellow, #ffae00);
 $color-success-green: var(--color-success-green, #09af00);
 $color-white: var(--color-white, #fff);
 $color-black: var(--color-black, #000);
-$color-shadow-dark: var(--color-shadow-dark, rgb(0 0 0 / 80%));
-$color-shadow-medium: var(--color-shadow-dark, rgb(0 0 0 / 50%));
 
 // Fonts
 $font-family: calibri, sans-serif;
@@ -25,14 +23,16 @@ $font-size-normal: 1rem;
 $font-size-small: .8rem;
 $font-size-tiny: .6rem;
 
-// Spaces
-$space-l: 20px;
-$space-m: 10px;
-$space-s: 5px;
-
 // Shadows
-$big-elements-shadow: 0 0 10px $color-shadow-medium;
-$small-elements-shadow: 0 0 5px 1px $color-shadow-dark;
+$big-elements-shadow: 0 0 10px $color-medium-gray;
+$small-elements-shadow: 0 0 5px 1px $color-dark-gray;
 
 // Header
 $header-height: var(--header-height, 70px);
+
+
+@mixin breakpoint-mobile() {
+  @media (max-width: 768px) {
+    @content;
+  }
+}

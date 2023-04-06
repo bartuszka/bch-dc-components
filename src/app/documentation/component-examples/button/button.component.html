@@ -1,0 +1,113 @@
+<h2 class="documentation">Button API</h2>
+
+<h3 class="documentation">TypeScript</h3>
+
+<app-code-example>
+  import &#123; BchDcButtonModule &#125; from 'bch-dc-components';
+</app-code-example>
+
+<h3 class="documentation">HTML</h3>
+
+<app-code-example [expandButtonVisible]="true">
+  <pre>
+      &#60;bch-dc-button
+          message="Basic"
+          iconName="play_arrow"
+          [colorMode]="colorModes.BASIC"&#62;
+      &#60;/bch-dc-button&#62;
+
+      &#60;bch-dc-button
+          message="Primary Dark"
+          iconName="menu"
+          [colorMode]="colorModes.PRIMARY_DARK"&#62;
+      &#60;/bch-dc-button&#62;
+
+      &#60;bch-dc-button
+          message="Primary Light"
+          iconName="play_arrow"
+          [colorMode]="colorModes.PRIMARY_LIGHT"&#62;
+      &#60;/bch-dc-button&#62;
+
+      &#60;bch-dc-button
+          message="Secondary Dark"
+          iconName="play_arrow"
+          [colorMode]="colorModes.SECONDARY_DARK"&#62;
+      &#60;/bch-dc-button&#62;
+
+      &#60;bch-dc-button
+          message="Secondary Light"
+          iconName="play_arrow"
+          [colorMode]="colorModes.SECONDARY_LIGHT"&#62;
+      &#60;/bch-dc-button&#62;
+
+      &#60;bch-dc-button
+          message="Warning"
+          iconName="play_arrow"
+          [colorMode]="colorModes.WARNING"
+      &#60;/bch-dc-button&#62;
+
+      &#60;bch-dc-button
+          message="Error"
+          iconName="play_arrow"
+          [colorMode]="colorModes.ERROR"
+      &#60;/bch-dc-button&#62;
+
+      &#60;bch-dc-button
+          message="Icon On Right"
+          iconName="menu"
+          [iconOnRight]="true"
+          [colorMode]="colorModes.PRIMARY_DARK"&#62;
+      &#60;/bch-dc-button&#62;
+
+      &#60;bch-dc-button
+          message="No Icon"
+          [colorMode]="colorModes.PRIMARY_LIGHT"&#62;
+      &#60;/bch-dc-button&#62;
+
+      &#60;bch-dc-button
+          message="Disabled"
+          iconName="play_arrow"
+          [colorMode]="colorModes.SECONDARY_LIGHT"
+          [size]="circleButtonSizes.BIG" [isDisabled]="true"&#62;
+      &#60;/bch-dc-button&#62;
+  </pre>
+</app-code-example>
+
+
+<h3 class="documentation">Examples</h3>
+
+<div id="buttons-container">
+  <bch-dc-button iconName="play_arrow"
+                 message="Basic"
+                 [colorMode]="colorModes.BASIC"></bch-dc-button>
+  <bch-dc-button iconName="menu"
+                 message="Primary Dark"
+                 [colorMode]="colorModes.PRIMARY_DARK"></bch-dc-button>
+  <bch-dc-button message="Primary Light"
+                 iconName="play_arrow"
+                 [colorMode]="colorModes.PRIMARY_LIGHT"></bch-dc-button>
+  <bch-dc-button iconName="play_arrow"
+                 message="Secondary Dark"
+                 [colorMode]="colorModes.SECONDARY_DARK"></bch-dc-button>
+  <bch-dc-button iconName="play_arrow"
+                 message="Secondary Light"
+                 [colorMode]="colorModes.SECONDARY_LIGHT"></bch-dc-button>
+  <bch-dc-button iconName="play_arrow"
+                 message="Warning"
+                 [colorMode]="colorModes.WARN"></bch-dc-button>
+  <bch-dc-button iconName="play_arrow"
+                 message="Error"
+                 [colorMode]="colorModes.ERROR"></bch-dc-button>
+  <bch-dc-button iconName="menu"
+                 [iconOnRight]="true"
+                 message="Icon On Right"
+                 [colorMode]="colorModes.PRIMARY_DARK"></bch-dc-button>
+  <bch-dc-button [iconOnRight]="true"
+                 message="No Icon"
+                 [colorMode]="colorModes.PRIMARY_LIGHT"></bch-dc-button>
+  <bch-dc-button iconName="play_arrow"
+                 message="Disabled"
+                 [colorMode]="colorModes.SECONDARY_LIGHT"
+                 [isDisabled]="true"></bch-dc-button>
+</div>
+

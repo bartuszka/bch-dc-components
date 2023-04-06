@@ -3,5 +3,9 @@
   "dest": "../../dist/bch-dc-components",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "assets": [
+    "./assets/_bch-dc-styles.scss",
+    "./assets/_bch-dc-orange-blue-theme.scss"
+  ]
 }

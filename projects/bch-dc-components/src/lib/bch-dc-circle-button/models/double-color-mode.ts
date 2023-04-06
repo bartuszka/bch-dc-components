@@ -8,9 +8,11 @@ enum LibraryColor {
   COLOR_WARNING_YELLOW = 'color-warning-yellow',
   COLOR_ERROR_RED = 'color-error-red',
   COLOR_SUCCESS_GREEN = 'color-success-green',
-  COLOR_WHITE = 'color-white',
   COLOR_LIGHT_GRAY = 'color-light-gray',
   COLOR_MEDIUM_GRAY = 'color-medium-gray',
+  COLOR_DARK_GRAY = 'color-dark-gray',
+  COLOR_WHITE = 'color-white',
+  COLOR_BLACK = 'color-black',
 }
 
 export enum DoubleColorMode {
@@ -22,7 +24,7 @@ export enum DoubleColorMode {
   SECONDARY_LIGHT = 'SECONDARY_LIGHT',
   WARN = 'WARN',
   ERROR = 'ERROR',
-  DISABLED = 'DISABLED'
+  DISABLED = 'DISABLED',
 }
 
 export interface DoubleColorData {
@@ -33,7 +35,7 @@ export interface DoubleColorData {
 export const doubleColorModes: Map<DoubleColorMode, DoubleColorData> = new Map();
 
 doubleColorModes.set(DoubleColorMode.BASIC, {
-  textColor: LibraryColor.COLOR_PRIMARY_DARK,
+  textColor: LibraryColor.COLOR_BLACK,
   backgroundColor: LibraryColor.COLOR_WHITE
 });
 
@@ -43,7 +45,7 @@ doubleColorModes.set(DoubleColorMode.PRIMARY_DARK, {
 });
 
 doubleColorModes.set(DoubleColorMode.PRIMARY_LIGHT, {
-  textColor: LibraryColor.COLOR_PRIMARY_DARK,
+  textColor: LibraryColor.COLOR_BLACK,
   backgroundColor: LibraryColor.COLOR_PRIMARY_MEDIUM
 });
 
@@ -54,8 +56,18 @@ doubleColorModes.set(DoubleColorMode.SECONDARY_DARK, {
 });
 
 doubleColorModes.set(DoubleColorMode.SECONDARY_LIGHT, {
-  textColor: LibraryColor.COLOR_SECONDARY_DARK,
+  textColor: LibraryColor.COLOR_BLACK,
   backgroundColor: LibraryColor.COLOR_SECONDARY_MEDIUM
+});
+
+doubleColorModes.set(DoubleColorMode.WARN, {
+  textColor: LibraryColor.COLOR_BLACK,
+  backgroundColor: LibraryColor.COLOR_WARNING_YELLOW
+});
+
+doubleColorModes.set(DoubleColorMode.ERROR, {
+  textColor: LibraryColor.COLOR_WHITE,
+  backgroundColor: LibraryColor.COLOR_ERROR_RED
 });
 
 doubleColorModes.set(DoubleColorMode.DISABLED, {
