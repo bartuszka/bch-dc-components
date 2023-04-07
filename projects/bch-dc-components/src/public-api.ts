@@ -17,4 +17,5 @@ export * from './lib/bch-dc-circle-button/bch-dc-circle-button.module';
 export * from './lib/bch-dc-circle-button/bch-dc-circle-button.component';
 export * from './lib/bch-dc-circle-button/models/circle-button-size';
 export * from './lib/bch-dc-circle-button/models/double-color-mode';
-export * from './lib/bch-dc-header/token-injection/error-handling-token';
+export * from './lib/bch-dc-button/bch-dc-button.module';
+export * from './lib/bch-dc-button/bch-dc-button.component';

@@ -1,0 +1,32 @@
+@import '../styles/styles';
+
+$padding-horizontal: 15px;
+$padding-horizontal-icon: 32px;
+$padding-vertical: 7px;
+
+button {
+  font-size: $font-size-header-third;
+  font-weight: bold;
+  padding: $padding-vertical $padding-horizontal;
+
+  &.icon {
+    padding-left: $padding-horizontal-icon;
+
+    i {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: $padding-vertical;
+    }
+  }
+
+  &.icon.icon-right {
+    padding-left: $padding-horizontal;
+    padding-right: $padding-horizontal-icon;
+
+    i {
+      left: auto;
+      right: $padding-vertical;
+    }
+  }
+}

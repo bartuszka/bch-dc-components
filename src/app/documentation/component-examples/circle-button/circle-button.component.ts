@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { DoubleColorMode, CircleButtonSize } from 'bch-dc-components';
+import { DoubleColorMode } from 'projects/bch-dc-components/src/lib/bch-dc-circle-button/models/double-color-mode';
+import { CircleButtonSize } from 'projects/bch-dc-components/src/lib/bch-dc-circle-button/models/circle-button-size';
 
 @Component({
   selector: 'app-circle-button',

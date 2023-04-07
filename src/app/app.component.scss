@@ -1,8 +1,8 @@
-@import './shared/styles/variables';
+@import 'bch-dc-styles';
 
-//#container {
+// #container {
 //  display: flex;
-//
+
 //  #content-container {
 //    box-sizing: border-box;
 //    height: calc(100vh - $header-height);
@@ -11,9 +11,9 @@
 //    width: 100%;
 //    z-index: 1;
 //  }
-//
+
 //  z-index: 1;
-//}
+// }
 
 #content-container {
   box-sizing: border-box;

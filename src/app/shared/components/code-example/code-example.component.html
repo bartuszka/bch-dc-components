@@ -1,0 +1,8 @@
+<code [ngClass]="{ opened: isOpened }">
+  <bch-dc-circle-button *ngIf="expandButtonVisible"
+                        [colorMode]="colorModes.BASIC"
+                        (click)="isOpened = !isOpened">
+  </bch-dc-circle-button>
+
+  <ng-content></ng-content>
+</code>

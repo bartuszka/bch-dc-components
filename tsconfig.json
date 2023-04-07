@@ -4,13 +4,14 @@
   "compilerOptions": {
     "baseUrl": "./",
     "paths": {
+      "@angular/*": [
+        "./node_modules/@angular/*"
+      ],
       "bch-dc-components": [
         "dist/bch-dc-components"
       ]
     },
     "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,

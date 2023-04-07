@@ -1,9 +1,11 @@
-@use 'sass:string';
 @import 'variables';
 
-@mixin set-button-background-color($class-name, $color) {
+@mixin set-button-background-color($class-name, $bg-color, $text-color) {
   &.#{$class-name} {
-    background-color: $color;
+    background-color: $bg-color;
+    color: $text-color;
+    box-shadow: $big-elements-shadow;
+    overflow: hidden;
 
     &:visited {
       animation-name: button-background-animation;
@@ -40,22 +42,25 @@ button {
   }
 
   &:active::after {
-    width: 0%;
-    height: 0%;
+    width: 0;
+    height: 0;
     opacity: .2;
     transition: 0s;
   }
 
-  @include set-button-background-color('color-primary-dark', $color-primary-dark);
-  @include set-button-background-color('color-primary-medium', $color-primary-medium);
-  @include set-button-background-color('color-primary-light', $color-primary-light);
-  @include set-button-background-color('color-secondary-dark', $color-secondary-dark);
-  @include set-button-background-color('color-secondary-medium', $color-secondary-medium);
-  @include set-button-background-color('color-secondary-light', $color-secondary-light);
-  @include set-button-background-color('color-white', $color-white);
+  @include set-button-background-color('color-primary-dark', $color-primary-dark, $color-white);
+  @include set-button-background-color('color-primary-medium', $color-primary-medium, $color-black);
+  @include set-button-background-color('color-primary-light', $color-primary-light, $color-black);
+  @include set-button-background-color('color-secondary-dark', $color-secondary-dark, $color-white);
+  @include set-button-background-color('color-secondary-medium', $color-secondary-medium, $color-black);
+  @include set-button-background-color('color-secondary-light', $color-secondary-light, $color-black);
+  @include set-button-background-color('color-warning-yellow', $color-warning-yellow, $color-black);
+  @include set-button-background-color('color-error-red', $color-error-red, $color-white);
+  @include set-button-background-color('color-white', $color-white, $color-black);
 
   &[disabled] {
     background-color: $color-light-gray;
+    color: $color-medium-gray;
     pointer-events: none;
   }
 }
