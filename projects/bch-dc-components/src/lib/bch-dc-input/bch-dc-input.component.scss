@@ -1,0 +1,35 @@
+@import '../../../projects/bch-dc-components/src/lib/styles/styles';
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  input, label {
+    display: block;
+  }
+
+  input {
+    padding: 3px;
+    border: none;
+    background-color: $color-white;
+    border-bottom: solid $color-primary-medium 1px;
+    outline: none;
+  }
+
+  label {
+    padding: 3px;
+    background-color: $color-primary-dark;
+    color: $color-white;
+  }
+
+  &.disabled {
+    input {
+      border-bottom: solid $color-primary-light 1px;
+      color: $color-medium-gray;
+    }
+
+    label {
+      background-color: $color-primary-light;
+    }
+  }
+}

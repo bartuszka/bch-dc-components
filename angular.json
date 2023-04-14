@@ -34,7 +34,7 @@
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "./node_modules/bch-dc-components/assets"
+                "./projects/bch-dc-components/assets"
               ]
             },
             "scripts": []
@@ -102,12 +102,10 @@
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "./node_modules/bch-dc-components/assets"
+                "./projects/bch-dc-components/assets"
               ]
             },
-            "scripts": [],
-            "name":,
-            "project":
+            "scripts": []
           }
         }
       }

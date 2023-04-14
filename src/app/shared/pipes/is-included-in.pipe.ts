@@ -5,7 +5,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class IsIncludedInPipe implements PipeTransform {
   transform(value: string, substringOfValue: string): boolean {
-    console.log('*', substringOfValue?.includes(value))
     return substringOfValue?.includes(value);
   }
 }
