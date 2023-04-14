@@ -34,6 +34,7 @@ export class BchDcSideMenuDirective implements AfterViewInit {
     this.setDimensions(window.innerWidth);
     this.windowHeight = window.innerHeight;
     this.setSiblingElementTransitions();
+    setTimeout(() => this.setHeight());
   }
 
   private setDimensions(windowWidth: number) {

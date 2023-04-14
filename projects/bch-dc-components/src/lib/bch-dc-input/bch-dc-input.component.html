@@ -1,0 +1,10 @@
+<div class="form-group" [ngClass]="{ disabled: inputDisabled }">
+  <label *ngIf="labelMessage"
+         [attr.for]="idForLabel">{{ labelMessage }}</label>
+  <input [attr.id]="idForLabel"
+         [type]="type"
+         [value]="value"
+         [disabled]="_inputDisabled"
+         (focus)="touched()"
+         (change)="changeValue($event)">
+</div>

@@ -1,0 +1,69 @@
+<h2 class="documentation">Input field API</h2>
+
+<h3 class="documentation">TypeScript</h3>
+
+<app-code-example [expandButtonVisible]="true">
+  <pre>
+    import &#123; BchDcInputModule &#125; from 'bch-dc-components';
+
+    public inputForm: FormGroup;
+    public inputValue: string;
+
+    public ngOnInit(): void &#123;
+      this.inputForm = new FormGroup&#60;InputFormGroup&#62;(&#123;
+        input: new FormControl('input value'),
+        inputDisabled: new FormControl('Input disabled value')
+      &#125;)
+
+      this.inputValue = this.inputForm.value.input;
+    &#125;
+
+    public valueChanged(value: string): void &#123;
+      this.inputValue = value;
+    &#125;
+  </pre>
+</app-code-example>
+
+<h3 class="documentation">HTML</h3>
+
+<app-code-example [expandButtonVisible]="true">
+  <pre>
+      &#60;form [formGroup]="inputForm"&#62;
+        &#60;bch-dc-input
+                      idForLabel="inputField"
+                      labelMessage="Input"
+                      type="text"
+                      formControlName="input"
+                      (onValueChanged)="valueChanged($event)"&#62;
+        &#60;/bch-dc-input&#62;
+
+        &#60;bch-dc-input
+                      idForLabel="inputFieldDisabled"
+                      labelMessage="Disabled Input"
+                      [inputDisabled]="true"
+                      type="text"
+                      formControlName="inputDisabled"&#62;
+        &#60;/bch-dc-input>
+      &#60;/form&#62;
+  </pre>
+</app-code-example>
+
+<h3 class="documentation">Examples</h3>
+
+<form [formGroup]="inputForm">
+  <bch-dc-input type="text"
+                idForLabel="inputField"
+                labelMessage="Input"
+                formControlName="input"
+                (onValueChanged)="valueChanged($event)">
+  </bch-dc-input>
+
+  <p>Value: {{ inputValue }}</p>
+
+  <bch-dc-input idForLabel="inputFieldDisabled"
+                type="text"
+                labelMessage="Disabled Input"
+                [inputDisabled]="true"
+                formControlName="inputDisabled">
+  </bch-dc-input>
+</form>
