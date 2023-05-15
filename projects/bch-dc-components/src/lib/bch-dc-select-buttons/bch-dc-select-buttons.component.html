@@ -1,0 +1,19 @@
+<div id="select-button-container"
+     [ngClass]="{ disabled: inputDisabled }">
+  <div class="label" *ngIf="labelMessage">{{ labelMessage }}</div>
+
+  <div class="buttons">
+    <div *ngFor="let valueData of valuesData; let i = index"
+         class="button-container form-group"
+         bchDcSelectButtons
+         [isChecked]="valueData.isChecked">
+
+      <button type="button">{{ buttonMessages[i] }}</button>
+
+      <input [value]="valueData.value"
+             (change)="changeValue($event, valueData)"
+             class="hidden"
+             type="checkbox">
+    </div>
+  </div>
+</div>

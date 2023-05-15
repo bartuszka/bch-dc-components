@@ -1,15 +1,17 @@
-@import '../../../projects/bch-dc-components/src/lib/styles/styles';
+@import '../styles/styles';
 
 .form-group {
   display: flex;
   flex-direction: column;
 
   input, label {
+    height: $label-height;
+    line-height: $label-height;
+    text-indent: $space-s;
     display: block;
   }
 
   input {
-    padding: 3px;
     border: none;
     background-color: $color-white;
     border-bottom: solid $color-primary-medium 1px;
@@ -17,7 +19,6 @@
   }
 
   label {
-    padding: 3px;
     background-color: $color-primary-dark;
     color: $color-white;
   }

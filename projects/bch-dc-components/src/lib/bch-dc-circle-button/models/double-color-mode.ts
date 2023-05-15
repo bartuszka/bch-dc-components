@@ -1,4 +1,4 @@
-enum LibraryColor {
+export enum LibraryColor {
   COLOR_PRIMARY_DARK = 'color-primary-dark',
   COLOR_PRIMARY_MEDIUM = 'color-primary-medium',
   COLOR_PRIMARY_LIGHT = 'color-primary-light',

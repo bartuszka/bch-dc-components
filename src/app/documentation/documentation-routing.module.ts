@@ -23,6 +23,10 @@ const routes: Routes = [
       {
         path: 'input',
         loadChildren: () => import('./component-examples/input/input.module').then(m => m.InputModule)
+      },
+      {
+        path: 'select-button',
+        loadChildren: () => import('./component-examples/select-button/select-button.module').then(m => m.SelectButtonModule)
       }
     ]
   }

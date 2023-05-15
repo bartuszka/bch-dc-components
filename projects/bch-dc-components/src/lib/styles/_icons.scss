@@ -1,4 +1,4 @@
-$icons: 'menu', 'play_arrow';
+$icons: 'menu', 'play_arrow', 'done';
 
 @mixin icons() {
   @each $icon in $icons {

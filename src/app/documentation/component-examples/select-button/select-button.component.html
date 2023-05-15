@@ -1,0 +1,87 @@
+<h2 class="documentation">Select Button API</h2>
+
+<h3 class="documentation">TypeScript</h3>
+
+<app-code-example [expandButtonVisible]="true">
+  <pre>
+    import &#123; BchDcSelectButtonModule &#125; from 'bch-dc-components';
+
+    public buttonMessages: string[] = ['C', 'U', 'S', 'PL'];
+
+    public labelMessage: string = 'Select button label';
+
+    public currentValues: SelectedValueModel[] = [
+      &#123; name:'name 1', data: 'value 1' &#125;
+      &#123; name:'name 2', data: 'value 2' &#125;
+    ];
+
+    public availableValues: SelectedValueModel[] = [
+      &#123; name:'name 1', data: 'value 1' &#125;
+      &#123; name:'name 2', data: 'value 2' &#125;
+      &#123; name:'name 3', data: 'value 3' &#125;
+      &#123; name:'name 4', data: 'value 4' &#125;
+    ];
+
+    public selectedValuesForm: FormGroup&#123;SelectedValuesFormGroup&#125;;
+    public inputValues: SelectedValueModel[];
+
+    public ngOnInit(): void &#123;
+      this.selectedValuesForm = new FormGroup&#123;SelectedValuesFormGroup&#125;(&#123;
+        selectedValues: new FormControl(this.currentValues),
+        selectedValuesDisabled: new FormControl(this.currentValues)
+    &#125;);
+
+    this.inputValues = this.selectedValuesForm.value.selectedValues;
+
+    public valueChanged(value: SelectedValueModel[]): void &#123;
+      this.inputValues = value;
+    }
+  &#125;
+  </pre>
+</app-code-example>
+
+<h3 class="documentation">HTML</h3>
+
+<app-code-example [expandButtonVisible]="true">
+  <pre>
+      &#60;form [formGroup]="selectedValuesForm" (ngSubmit)="submit()"&#62;
+        &#60;bch-dc-select-buttons
+                      [labelMessage]="labelMessage"
+                      [buttonMessages]="buttonMessages"
+                      [availableValues]="availableValues"
+                      (onValueChanged)="valueChanged($event)"
+                      formControlName="selectedValues"&#62;
+        &#60;/bch-dc-select-buttons&#62;
+
+        &#60;bch-dc-select-buttons
+                      [labelMessage]="labelMessage"
+                      [buttonMessages]="buttonMessages"
+                      [availableValues]="availableValues"
+                      (onValueChanged)="valueChanged($event)"
+                      [inputDisabled]="true"
+                      formControlName="selectedValuesDisabled"&#62;
+        &#60;/bch-dc-select-buttons&#62;
+      &#60;/form&#62;
+  </pre>
+</app-code-example>
+
+<h3 class="documentation">Examples</h3>
+
+<form [formGroup]="selectedValuesForm" (ngSubmit)="submit()">
+  <bch-dc-select-buttons [labelMessage]="labelMessage"
+                         [buttonMessages]="buttonMessages"
+                         [availableValues]="availableValues"
+                         (onValueChanged)="valueChanged($event)"
+                         formControlName="selectedValues">
+  </bch-dc-select-buttons>
+
+  <bch-dc-select-buttons [labelMessage]="labelMessage"
+                         [buttonMessages]="buttonMessages"
+                         [availableValues]="availableValues"
+                         (onValueChanged)="valueChanged($event)"
+                         [inputDisabled]="true"
+                         formControlName="selectedValuesDisabled">
+  </bch-dc-select-buttons>
+
+  <div *ngFor="let value of inputValues">{{ value.name }} {{ value.data }}</div>
+</form>
