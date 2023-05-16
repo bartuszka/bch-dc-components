@@ -1,0 +1,80 @@
+@import '../styles/styles';
+
+:host {
+  display: inline-block;
+
+  #select-button-container {
+    display: inline-block;
+
+    .label {
+      padding: 0 $space-s;
+      height: $label-height;
+      line-height: $label-height;
+      background-color: $color-primary-dark;
+      color: $color-white;
+      white-space: nowrap;
+    }
+
+    .buttons {
+      display: flex;
+      width: 100%;
+
+      .button-container {
+        min-width: 25px;
+        width: 100%;
+        position: relative;
+
+        input {
+          position: absolute;
+          top: 0;
+          left: 0;
+          visibility: hidden;
+        }
+
+        button {
+          display: block;
+          width: 100%;
+          padding: 0 $space-s;
+          height: $label-height;
+          background-color: $color-white;
+          color: $color-black;
+          border-bottom: solid $color-primary-dark 1px;
+          transition: background-color .2s ease-out;
+
+          &.checked {
+            background-color: $color-primary-medium;
+
+            i {
+              visibility: visible;
+            }
+          }
+        }
+      }
+    }
+
+    &.disabled {
+      .label {
+        background-color: $color-primary-light;
+        color: $color-black;
+      }
+
+      .buttons {
+        pointer-events: none;
+
+        .button-container {
+          button {
+            background-color: $color-white;
+
+            &.checked {
+              background-color: $color-primary-light;
+
+              i {
+                visibility: visible;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

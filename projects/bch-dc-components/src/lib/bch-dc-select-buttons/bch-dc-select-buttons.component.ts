@@ -1,4 +1,4 @@
-import { Component, EventEmitter, forwardRef, Input, Output } from '@angular/core';
+import { Component, EventEmitter, forwardRef, Input, OnInit, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { ValueData } from './models/value-data';
@@ -14,43 +14,36 @@ import { cloneDeep } from '../functions/clone-deep';
     multi: true
   }]
 })
-export class BchDcSelectButtonsComponent implements ControlValueAccessor {
+export class BchDcSelectButtonsComponent implements ControlValueAccessor, OnInit {
   @Input() public labelMessage: string;
   @Input() public buttonMessages: string[];
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  @Input() public availableValues: any[];
+  @Input() public availableValues: any[];                                                                               // eslint-disable-line @typescript-eslint/no-explicit-any
   @Input() public inputDisabled: boolean = false;
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  @Output() public onValueChanged: EventEmitter<any[]> = new EventEmitter<any[]>();
+  @Output() public onValueChanged: EventEmitter<any[]> = new EventEmitter<any[]>();                                     // eslint-disable-line @typescript-eslint/no-explicit-any
 
   public valuesData: ValueData[];
+  public onChange: (value: any[]) => void = (): void => { /* EMPTY */ };                                                // eslint-disable-line @typescript-eslint/no-explicit-any
+  public onTouched: () => void = (): void => { /* EMPTY */ };                                                           // eslint-disable-line @typescript-eslint/no-explicit-any
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  public onChange: (value: any[]) => void = (): void => { /* EMPTY */ };
-  public onTouched: () => void = (): void => { /* EMPTY */ };
+  private _value: any[] = null;                                                                                         // eslint-disable-line @typescript-eslint/no-explicit-any
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  private _value: any[] = null;
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  @Input() public set value(value: any[]) {
+  @Input() public set value(value: any[]) {                                                                             // eslint-disable-line @typescript-eslint/no-explicit-any
     if (value === this._value) {
       return;
     }
 
     this._value = value;
-
-    if (!this.valuesData) {
-      this.setValuesData();
-    }
-
+    this.setValuesData();
     this.onChange(this._value);
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  public get value(): any[] {
+  public get value(): any[] {                                                                                           // eslint-disable-line @typescript-eslint/no-explicit-any
     return this._value;
+  }
+
+  public ngOnInit(): void {
+    this.setValuesData();
   }
 
   public changeValue(event: Event, valueData: ValueData): void {
@@ -59,41 +52,31 @@ export class BchDcSelectButtonsComponent implements ControlValueAccessor {
     this.onValueChanged.emit(this._value);
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  public registerOnChange(fn: any): void {
+  public registerOnChange(fn: any): void {                                                                              // eslint-disable-line @typescript-eslint/no-explicit-any
     this.onChange = fn;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  public registerOnTouched(fn: any): void {
+  public registerOnTouched(fn: any): void {                                                                             // eslint-disable-line @typescript-eslint/no-explicit-any
     this.onTouched = fn;
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  public writeValue(value: any[]): void {
+  public writeValue(value: any[]): void {                                                                               // eslint-disable-line @typescript-eslint/no-explicit-any
     this.value = value;
     this.onChange(this._value);
   }
 
   private setValuesData(): void {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const currentValueStrings: string[] = this.value.map((currentValue: any) => JSON.stringify(currentValue));
+    if (this._value && !this.valuesData && this.availableValues) {
+      const currentValueStrings: string[] = this._value.map((currentValue: any) => JSON.stringify(currentValue));       // eslint-disable-line @typescript-eslint/no-explicit-any
 
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    this.valuesData = this.availableValues.map((currentValue: any) => {
-      const availableValueString: string = JSON.stringify(currentValue);
-
-      return {
-        isChecked: currentValueStrings.includes(availableValueString),
+      this.valuesData = this.availableValues.map((currentValue: any) => ({                                              // eslint-disable-line @typescript-eslint/no-explicit-any
+        isChecked: currentValueStrings.includes(JSON.stringify(currentValue)),
         value: cloneDeep(currentValue)
-      }
-    })
-
-    this.value = this.value || Array.from(this.availableValues).map(() => null);
+      }));
+    }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  private getValuesFromValuesData(): any[] {
+  private getValuesFromValuesData(): any[] {                                                                            // eslint-disable-line @typescript-eslint/no-explicit-any
     return this.valuesData
       .filter((currentValueData: ValueData) => currentValueData.isChecked)
       .map((currentValueData: ValueData) => currentValueData.value)

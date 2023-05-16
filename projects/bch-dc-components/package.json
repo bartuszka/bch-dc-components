@@ -1,6 +1,6 @@
 {
   "name": "bch-dc-components",
-  "version": "0.0.57",
+  "version": "0.0.58",
   "exports": {
     "./themeee": {
       "sass": "./assets/_bch-dc-styles.scss",

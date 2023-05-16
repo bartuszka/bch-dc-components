@@ -1,10 +1,10 @@
-<h2 class="documentation">Select Button API</h2>
+<h2 class="documentation">Multi Select Button API</h2>
 
 <h3 class="documentation">TypeScript</h3>
 
 <app-code-example [expandButtonVisible]="true">
   <pre>
-    import &#123; BchDcSelectButtonModule &#125; from 'bch-dc-components';
+    import &#123; BchDcSelectButtonsModule &#125; from 'bch-dc-components';
 
     public buttonMessages: string[] = ['C', 'U', 'S', 'PL'];
 
@@ -22,11 +22,11 @@
       &#123; name:'name 4', data: 'value 4' &#125;
     ];
 
-    public selectedValuesForm: FormGroup&#123;SelectedValuesFormGroup&#125;;
+    public selectedValuesForm: FormGroup&#60;SelectedValuesFormGroup>;
     public inputValues: SelectedValueModel[];
 
     public ngOnInit(): void &#123;
-      this.selectedValuesForm = new FormGroup&#123;SelectedValuesFormGroup&#125;(&#123;
+      this.selectedValuesForm = new FormGroup&#60;SelectedValuesFormGroup>(&#123;
         selectedValues: new FormControl(this.currentValues),
         selectedValuesDisabled: new FormControl(this.currentValues)
     &#125;);
@@ -62,10 +62,16 @@
                       formControlName="selectedValuesDisabled"&#62;
         &#60;/bch-dc-select-buttons&#62;
       &#60;/form&#62;
+
+    &#60;bch-dc-select-buttons
+                [value]="currentValues"
+                [labelMessage]="labelMessage"
+                [buttonMessages]="buttonMessages"
+                [availableValues]="availableValues"
+                (onValueChanged)="valueChanged($event)">
+    &#60;/bch-dc-select-buttons>
   </pre>
 </app-code-example>
-
-<h3 class="documentation">Examples</h3>
 
 <form [formGroup]="selectedValuesForm" (ngSubmit)="submit()">
   <bch-dc-select-buttons [labelMessage]="labelMessage"
@@ -82,6 +88,110 @@
                          [inputDisabled]="true"
                          formControlName="selectedValuesDisabled">
   </bch-dc-select-buttons>
-
-  <div *ngFor="let value of inputValues">{{ value.name }} {{ value.data }}</div>
 </form>
+
+<bch-dc-select-buttons [value]="currentValues"
+                       [labelMessage]="labelMessage"
+                       [buttonMessages]="buttonMessages"
+                       [availableValues]="availableValues"
+                       (onValueChanged)="valueChanged($event)">
+</bch-dc-select-buttons>
+
+<h2 class="documentation">Single Select Button API</h2>
+
+<h3 class="documentation">TypeScript</h3>
+
+<app-code-example [expandButtonVisible]="true">
+  <pre>
+    import &#123; BchDcSelectButtonModule &#125; from 'bch-dc-components';
+
+    public selectedValueForm: FormGroup&#60;SelectedValueFormGroup>;
+    public singularInputValue: SelectedValueModel;
+    public singularButtonMessages: string[] = ['C', 'U', 'S', 'PL'];
+    public singularLabelMessage: string = 'Select singular button label';
+    public availableValues: SelectedValueModel[] = [
+      &#123; name:'name 1', data: 'value 1' &#125;
+      &#123; name:'name 2', data: 'value 2' &#125;
+      &#123; name:'name 3', data: 'value 3' &#125;
+      &#123; name:'name 4', data: 'value 4' &#125;
+    ];
+    public singleInputValues: SelectedValueModel[] = [ ...this.availableValues ];
+    public currentValue: SelectedValueModel = &#123; name:'name 2', data: 'value 2' &#125;;
+
+
+    public inputValues: SelectedValueModel[];
+
+    public ngOnInit(): void &#123;
+      this.selectedValuesForm = new FormGroup&#123;SelectedValueFormGroup&#125;(&#123;
+        selectedValue: new FormControl(this.currentValue),
+        selectedValueDisabled: new FormControl(this.currentValue)
+    &#125;);
+
+    this.singularInputValue = this.selectedValueForm.value.selectedValue;
+
+    public valueChanged(value: SelectedValueModel[]): void &#123;
+      this.singularInputValue = value;
+    }
+  &#125;
+  </pre>
+</app-code-example>
+
+<h3 class="documentation">HTML</h3>
+
+<app-code-example [expandButtonVisible]="true">
+  <pre>
+      &#60;form [formGroup]="selectedValueForm" (ngSubmit)="submit()">
+        &#60;bch-dc-select-button name="selectButton"
+                                  [labelMessage]="singularLabelMessage"
+                                  [buttonMessages]="singularButtonMessages"
+                                  [availableValues]="singleInputValues"
+                                  (onValueChanged)="singleValueChanged($event)"
+                                  formControlName="selectedValue">
+        &#60;/bch-dc-select-button>
+
+        &#60;bch-dc-select-button name="selectButtonDisabled"
+                                  [labelMessage]="singularLabelMessage"
+                                  [buttonMessages]="singularButtonMessages"
+                                  [availableValues]="singleInputValues"
+                                  (onValueChanged)="singleValueChanged($event)"
+                                  [inputDisabled]="true"
+                                  formControlName="selectedValueDisabled">
+        &#60;/bch-dc-select-button>
+      &#60;/form>
+
+      &#60;bch-dc-select-button name="selectButton2"
+                                [value]="singleInputValues[2]"
+                                [labelMessage]="singularLabelMessage"
+                                [buttonMessages]="singularButtonMessages"
+                                [availableValues]="singleInputValues"
+                                (onValueChanged)="singleValueChanged($event)">
+      &#60;/bch-dc-select-button>
+  </pre>
+</app-code-example>
+
+<form [formGroup]="selectedValueForm" (ngSubmit)="submit()">
+  <bch-dc-select-button name="selectButton"
+                        [labelMessage]="singularLabelMessage"
+                        [buttonMessages]="singularButtonMessages"
+                        [availableValues]="singleInputValues"
+                        (onValueChanged)="singleValueChanged($event)"
+                        formControlName="selectedValue">
+  </bch-dc-select-button>
+
+  <bch-dc-select-button name="selectButtonDisabled"
+                        [labelMessage]="singularLabelMessage"
+                        [buttonMessages]="singularButtonMessages"
+                        [availableValues]="singleInputValues"
+                        (onValueChanged)="singleValueChanged($event)"
+                        [inputDisabled]="true"
+                        formControlName="selectedValueDisabled">
+  </bch-dc-select-button>
+</form>
+
+<bch-dc-select-button name="selectButton2"
+                      [value]="singleInputValues[2]"
+                      [labelMessage]="singularLabelMessage"
+                      [buttonMessages]="singularButtonMessages"
+                      [availableValues]="singleInputValues"
+                      (onValueChanged)="singleValueChanged($event)">
+</bch-dc-select-button>
