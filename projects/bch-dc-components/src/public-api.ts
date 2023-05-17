@@ -23,3 +23,5 @@ export * from './lib/bch-dc-select-buttons/bch-dc-select-buttons.module';
 export * from './lib/bch-dc-select-buttons/bch-dc-select-buttons.component';
 export * from './lib/bch-dc-select-button/bch-dc-select-button.module';
 export * from './lib/bch-dc-select-button/bch-dc-select-button.component';
+export * from './lib/bch-dc-option-box/bch-dc-option-box.module';
+export * from './lib/bch-dc-option-box/bch-dc-option-box.component';

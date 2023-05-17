@@ -5,7 +5,6 @@ import {
   BchDcSelectButtonsModule
 } from '../../../../../projects/bch-dc-components/src/lib/bch-dc-select-buttons/bch-dc-select-buttons.module';
 import { SharedModule } from '../../../shared/shared.module';
-import { BchDcInputModule } from '../../../../../projects/bch-dc-components/src/lib/bch-dc-input/bch-dc-input.module';
 import {
   BchDcSelectButtonModule
 } from '../../../../../projects/bch-dc-components/src/lib/bch-dc-select-button/bch-dc-select-button.module';
@@ -15,8 +14,7 @@ import {
     SelectButtonRoutingModule,
     BchDcSelectButtonsModule,
     BchDcSelectButtonModule,
-    SharedModule,
-    BchDcInputModule,
+    SharedModule
   ],
   declarations: [
     SelectButtonComponent,

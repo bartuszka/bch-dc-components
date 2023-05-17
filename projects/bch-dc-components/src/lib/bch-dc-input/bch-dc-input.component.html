@@ -2,6 +2,7 @@
   <label *ngIf="labelMessage"
          [attr.for]="idForLabel">{{ labelMessage }}</label>
   <input [attr.id]="idForLabel"
+         [attr.placeholder]="placeholder"
          [type]="type"
          [value]="value"
          [disabled]="_inputDisabled"

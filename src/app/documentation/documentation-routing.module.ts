@@ -27,6 +27,10 @@ const routes: Routes = [
       {
         path: 'select-button',
         loadChildren: () => import('./component-examples/select-button/select-button.module').then(m => m.SelectButtonModule)
+      },
+      {
+        path: 'option-box',
+        loadChildren: () => import('./component-examples/option-box/option-box.module').then(m => m.OptionBoxModule)
       }
     ]
   }

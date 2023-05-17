@@ -13,6 +13,7 @@ export class BchDcCircleButtonComponent implements OnInit {
   @Input() public colorMode: DoubleColorMode = DoubleColorMode.PRIMARY_LIGHT;
   @Input() public isDisabled: boolean = false;
   @Input() public size: CircleButtonSize = CircleButtonSize.SMALL;
+  @Input() public type: string = 'button';
 
   public colorSet: DoubleColorData;
   public colorSetDisabled: DoubleColorData;

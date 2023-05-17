@@ -1,6 +1,10 @@
-<button [ngClass]="[colorSet.backgroundColor, iconName ? 'icon' : '', iconOnRight ? 'icon-right' : '']"
+<button [attr.type]="type"
+        [ngClass]="[colorSet.backgroundColor, iconName ? 'icon' : '', iconOnRight ? 'icon-right' : '']"
         [disabled]="isDisabled">
 
-  <i *ngIf="iconName" [ngClass]="[iconName, (isDisabled ? colorSetDisabled.textColor : colorSet.textColor)]"></i>
+  <i *ngIf="iconName"
+     [ngClass]="[iconName, (isDisabled ? colorSetDisabled.textColor : colorSet.textColor)]">
+  </i>
+
   <span [ngClass]="colorSet.textColor">{{ message }}</span>
 </button>

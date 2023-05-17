@@ -21,7 +21,6 @@ export class BchDcSelectButtonDirective implements AfterViewInit {
   constructor(private elRef: ElementRef, private renderer: Renderer2) {}
 
   public ngAfterViewInit(): void {
-    // console.log('*')
     this.radioInput = this.elRef.nativeElement.querySelector('input');
     this.radioButton = this.elRef.nativeElement.querySelector('button');
     this.renderer.setProperty(this.radioInput, 'checked', this.isChecked);

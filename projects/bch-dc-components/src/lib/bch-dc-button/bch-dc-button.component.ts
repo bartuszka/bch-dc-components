@@ -12,6 +12,7 @@ export class BchDcButtonComponent implements OnInit {
   @Input() public colorMode: DoubleColorMode = DoubleColorMode.PRIMARY_LIGHT;
   @Input() public isDisabled: boolean = false;
   @Input() public iconOnRight: boolean = false;
+  @Input() public type: string = 'button';
 
   public colorSet: DoubleColorData;
   public colorSetDisabled: DoubleColorData;

@@ -1,0 +1,30 @@
+<h2 class="documentation">Option Box</h2>
+
+<h3 class="documentation">TypeScript</h3>
+
+<app-code-example [expandButtonVisible]="true">
+  <pre>
+    import &#123; BchDcOptionBoxModule &#125; from 'bch-dc-components';
+
+    public badges: string[] = ['Badge one', 'Badge two', 'Badge three', 'Badge four', 'Badge five'];
+
+    public badgesForm: FormGroup&#60;BadgesForm> = new FormGroup&#60;BadgesForm>(&#123;
+      badges: new FormControl(this.badges)
+    &#125;);
+  </pre>
+</app-code-example>
+
+<h3 class="documentation">HTML</h3>
+
+<app-code-example [expandButtonVisible]="false">
+  <pre>
+      &#60;form [formGroup]="badgesForm">
+        &#60;bch-dc-option-box formControlName="badges">&#60;/bch-dc-option-box>
+      &#60;/form>
+  </pre>
+</app-code-example>
+
+<form [formGroup]="badgesForm">
+  <bch-dc-option-box formControlName="badges"></bch-dc-option-box>
+  <bch-dc-option-box formControlName="badgesDisabled" [isDisabled]="true"></bch-dc-option-box>
+</form>

@@ -1,0 +1,111 @@
+@import '../styles/styles';
+
+#options-container {
+  width: 300px;
+  position: relative;
+
+  #label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 $space-s;
+    height: $label-height;
+    line-height: $label-height;
+    background-color: $color-primary-dark;
+    color: $color-white;
+    white-space: nowrap;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: $label-height;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    border-bottom: solid $color-primary-medium 1px;
+    border-top: none;
+  }
+
+  li {
+    button {
+      display: flex;
+      padding: 1px 0 1px 5px;
+      margin: 1px;
+      border-radius: 5px;
+      background-color: $color-primary-medium;
+      color: $color-white;
+    }
+
+    i {
+      cursor: pointer;
+      transition: scale ease-out .2s, opacity ease-out .2s;
+      scale: .8;
+      opacity: .5;
+
+      &:hover {
+        scale: 1;
+        opacity: 1;
+      }
+    }
+  }
+
+  #add-badge-container {
+    display: flex;
+    justify-content: space-between;
+    height: $label-height;
+    position: absolute;
+    width: 100%;
+    top: calc(100% - 10px);
+    opacity: 0;
+    transition: all ease-out .2s;
+    background-color: $color-white;
+    pointer-events: none;
+    z-index: 1000;
+
+    &.visible {
+      opacity: 1;
+      top: 100%;
+      pointer-events: all;
+    }
+
+    #add-badge-button {
+      margin: 0;
+      padding: 0;
+      background-color: $color-primary-medium;
+      border-top-left-radius: 5px;
+    }
+
+    bch-dc-input {
+      width: 100%;
+    }
+  }
+
+  i.interactive-icon-button {
+    height: auto;
+    cursor: pointer;
+    transition: scale ease-out .2s, opacity ease-out .2s;
+    scale: .8;
+    opacity: .5;
+
+    &:hover {
+      scale: 1;
+      opacity: 1;
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+
+    #label {
+      background-color: $color-primary-medium;
+    }
+
+    li {
+      button {
+        background-color: $color-primary-light;
+      }
+    }
+  }
+}

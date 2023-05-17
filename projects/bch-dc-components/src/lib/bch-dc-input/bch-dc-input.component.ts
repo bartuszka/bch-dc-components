@@ -16,6 +16,7 @@ export class BchDcInputComponent implements ControlValueAccessor {
   @Input() public labelMessage: string;
   @Input() public inputValue: string;
   @Input() public type: string = 'text';
+  @Input() public placeholder: string = '';
   @Output() public onValueChanged: EventEmitter<string> = new EventEmitter<string>();
 
   @ViewChild('inputField', { static: true }) public inputField: ElementRef<HTMLInputElement>;

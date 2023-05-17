@@ -1,0 +1,33 @@
+<div id="options-container"
+     [class.disabled]="isDisabled"
+     bchDcClickOutside
+     (clickedOutside)="addSectionVisible = false">
+
+  <div id="label" *ngIf="labelMessage">
+    <span>{{ labelMessage }}</span>
+    <i class="plus color-white interactive-icon-button"
+       (click)="addSectionVisible = !addSectionVisible">
+    </i>
+  </div>
+
+  <ul>
+    <li *ngFor="let badge of value; let i = index">
+      <button (click)="selectBadge(badge)">
+        <span>{{ badge }}</span>
+        <i class="close color-white interactive-icon-button"
+           (click)="removeBadge(i)">
+        </i>
+      </button>
+    </li>
+  </ul>
+
+  <div id="add-badge-container"
+       [class.visible]="addSectionVisible">
+    <bch-dc-input placeholder="Add a badge"></bch-dc-input>
+
+    <button id="add-badge-button"
+            (click)="addBadge()">
+      <i class="plus color-white interactive-icon-button"></i>
+    </button>
+  </div>
+</div>
