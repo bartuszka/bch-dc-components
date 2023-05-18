@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BchDcSelectButtonComponent } from './bch-dc-select-button.component';
+import { BchDcTriangleSelectComponent } from './bch-dc-triangle-select.component';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 
@@ -9,10 +9,10 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule
   ],
   declarations: [
-    BchDcSelectButtonComponent,
+    BchDcTriangleSelectComponent,
   ],
   exports: [
-    BchDcSelectButtonComponent
+    BchDcTriangleSelectComponent
   ]
 })
-export class BchDcSelectButtonModule {}
+export class BchDcTriangleSelectModule {}

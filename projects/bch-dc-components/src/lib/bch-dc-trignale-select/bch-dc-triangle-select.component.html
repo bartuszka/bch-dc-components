@@ -1,0 +1,33 @@
+<div id="triangles-container"
+     [style.--even-triangles-num-margin]="availableValues.length % 2 === 0 ? 1 : 0">
+
+  <div *ngFor="let valueData of valuesData; let i = index;"
+       class="button-container"
+       bchDcSelectButton
+       checkedClassReceiverSelector="svg"
+       clickedElementSelector="polygon"
+       [ngClass]="{ even: (i + 1) % 2 === 0, odd: (i + 1) % 2 !== 0 }"
+       [isChecked]="valueData.isChecked">
+
+    <svg *ngIf="i % 2 === 0; else evenPolygon"
+         height="150"
+         width="200">
+      <polygon points="100,0 0,150 200,150"/>
+    </svg>
+
+    <ng-template #evenPolygon>
+      <svg height="150"
+           width="200">
+        <polygon points="0,0 100,150 200,0"/>
+      </svg>
+    </ng-template>
+
+    <div class="button-message">{{ buttonMessages[i] }}</div>
+
+    <input type="radio"
+           class="hidden"
+           [attr.name]="name"
+           [attr.value]="valueData.value"
+           (change)="changeValue($event, valueData, i)">
+  </div>
+</div>

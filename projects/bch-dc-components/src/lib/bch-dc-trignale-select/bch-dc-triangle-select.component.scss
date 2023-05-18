@@ -1,0 +1,59 @@
+@import '../styles/styles';
+
+$triangle-margin: 80px;
+
+#triangles-container {
+  margin-right: calc($triangle-margin * var(--even-triangles-num-margin));
+
+  .button-container {
+    position: relative;
+    display: inline-block;
+    pointer-events: none;
+
+    .button-message {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      color: white;
+      font-size: $font-size-header-third;
+    }
+
+    &.even {
+      margin: 0 calc(-1 * $triangle-margin);
+
+      .button-message {
+        top: 40%;
+      }
+    }
+
+    &.odd {
+      .button-message {
+        top: 60%;
+      }
+    }
+
+    svg {
+      polygon {
+        pointer-events: all;
+        cursor: pointer;
+        fill: $color-primary-light;
+
+        &:hover {
+          fill: $color-primary-medium;
+        }
+      }
+
+      &.checked {
+        polygon {
+          fill: $color-primary-dark;
+        }
+      }
+    }
+
+    input {
+      width: 0;
+      height: 0;
+      visibility: hidden;
+    }
+  }
+}

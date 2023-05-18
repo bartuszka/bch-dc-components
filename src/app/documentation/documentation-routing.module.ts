@@ -31,6 +31,10 @@ const routes: Routes = [
       {
         path: 'option-box',
         loadChildren: () => import('./component-examples/option-box/option-box.module').then(m => m.OptionBoxModule)
+      },
+      {
+        path: 'triangle-select',
+        loadChildren: () => import('./component-examples/triangle-select/triangle-select.module').then(m => m.TriangleSelectModule)
       }
     ]
   }

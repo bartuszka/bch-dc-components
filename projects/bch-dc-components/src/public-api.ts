@@ -25,3 +25,5 @@ export * from './lib/bch-dc-select-button/bch-dc-select-button.module';
 export * from './lib/bch-dc-select-button/bch-dc-select-button.component';
 export * from './lib/bch-dc-option-box/bch-dc-option-box.module';
 export * from './lib/bch-dc-option-box/bch-dc-option-box.component';
+export * from './lib/bch-dc-trignale-select/bch-dc-triangle-select.module';
+export * from './lib/bch-dc-trignale-select/bch-dc-triangle-select.component';

@@ -1,0 +1,89 @@
+<h2 class="documentation">Triangle Select API</h2>
+
+<h3 class="documentation">TypeScript</h3>
+
+<app-code-example [expandButtonVisible]="true">
+  <pre>
+    import &#123; BchDcTriangleSelectModule &#125; from 'bch-dc-components';&#125;
+
+    export interface TriangleValue &#123;
+        name: string,
+        value: number
+    }
+
+    export interface WordTypeForm &#123;
+        wordType: FormControl&#60;TriangleValue>;
+    }
+
+    public wordTypeForm: FormGroup&#60;WordTypeForm>;
+    public availableValues: TriangleValue[] = [
+      &#123;
+      name: 'VERB',
+      value: 1
+      },
+      &#123;
+      name: 'NOUN',
+      value: 2
+      },
+      &#123;
+      name: 'OTHER',
+      value: 3
+      }
+    ];
+    public buttonMessages: string[] = ['Verb', 'Noun', 'Other'];
+    public selectedValue: TriangleValue = this.availableValues[2];
+
+    private formInitialValue: TriangleValue = &#123;
+      name: 'NOUN',
+      value: 2
+    };
+
+    public valueChanged(value: TriangleValue): void &#123;
+      this.selectedValue = value;
+    }
+
+    public ngOnInit(): void &#123;
+      this.wordTypeForm = new FormGroup&#60;WordTypeForm>(&#123;
+        wordType: new FormControl(this.formInitialValue)
+      });
+    }
+  </pre>
+</app-code-example>
+
+<h3 class="documentation">HTML</h3>
+
+<app-code-example [expandButtonVisible]="true">
+  <pre>
+    &#60;div class="examples-container">
+      &#60;form [formGroup]="wordTypeForm">
+        &#60;bch-dc-triangle-select [availableValues]="availableValues"
+                                    [buttonMessages]="buttonMessages"
+                                    formControlName="wordType">
+        &#60;/bch-dc-triangle-select>
+      &#60;/form>
+
+      &#60;bch-dc-triangle-select [value]="availableValues[2]"
+                                  [availableValues]="availableValues"
+                                  [buttonMessages]="buttonMessages"
+                                  (onValueChanged)="valueChanged($event)">
+      &#60;/bch-dc-triangle-select>
+    &#60;/div>
+  </pre>
+</app-code-example>
+
+<div class="examples-container">
+  <form [formGroup]="wordTypeForm">
+    <bch-dc-triangle-select [availableValues]="availableValues"
+                            [buttonMessages]="buttonMessages"
+                            formControlName="wordType">
+    </bch-dc-triangle-select>
+  </form>
+
+  <bch-dc-triangle-select [value]="availableValues[2]"
+                          [availableValues]="availableValues"
+                          [buttonMessages]="buttonMessages"
+                          (onValueChanged)="valueChanged($event)">
+  </bch-dc-triangle-select>
+
+  <div>Selected value: {{ selectedValue.name }} {{ selectedValue.value }}</div>
+</div>
